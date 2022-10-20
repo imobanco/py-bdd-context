@@ -42,7 +42,7 @@ omit = [
 [tool.poetry]
 name = "py-bdd-context"
 version = "0.0.0"
-description = "Biblioteca com Context Manager para testes Behavior-driven development (BDD)."
+description = "Biblioteca com Context Manager para facilitar os testes de Behavior Driven Development (BDD)"
 authors = ["Imobanco"]
 readme = "README.rst"
 packages = [{include = "py_bdd_context/**/*.py"}]
