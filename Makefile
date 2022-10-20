@@ -18,8 +18,6 @@ bump.version:
 	poetry version $(V)
 	sed 's/=.*/= "$(V)"/' -i py_bdd_context/__init__.py
 
-config.env:
-	cp .env.sample .env
 
 test:
 	python -m unittest $(args)
