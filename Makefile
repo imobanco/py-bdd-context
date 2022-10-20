@@ -16,7 +16,7 @@ poetry.config.venv:
 
 bump.version:
 	poetry version $(V)
-	sed 's/=.*/= "$(V)"/' -i bb_wrapper/__init__.py
+	sed 's/=.*/= "$(V)"/' -i py_bdd_context/__init__.py
 
 config.env:
 	cp .env.sample .env
