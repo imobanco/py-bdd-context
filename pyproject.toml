@@ -50,7 +50,7 @@ homepage = "https://github.com/imobanco/py-bdd-context"
 repository = "https://github.com/imobanco/py-bdd-context"
 license = "GPLv3"
 
-keywords = ["BDD", "Context Manager"]
+keywords = ["BDD", "Context Manager", "tests"]
 classifiers = [
     "Programming Language :: Python :: 3",
 	"Development Status :: 3 - Alpha",
