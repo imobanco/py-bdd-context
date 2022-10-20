@@ -50,4 +50,4 @@ package.publish:
 package.build_and_publish: package.build package.publish
 
 install.test:
-	pip install --index-url https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple/ bb-wrapper==$(V)
+	pip install --index-url https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple/ py-bdd-context==$(V)
