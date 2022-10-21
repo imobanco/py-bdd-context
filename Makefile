@@ -18,7 +18,6 @@ bump.version:
 	poetry version $(V)
 	sed 's/=.*/= "$(V)"/' -i py_bdd_context/__init__.py
 
-
 test:
 	python -m unittest $(args)
 
