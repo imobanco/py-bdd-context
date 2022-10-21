@@ -29,11 +29,6 @@ fmt.check:
 	black --check .
 	flake8
 
-coverage:
-	coverage run -m unittest
-	coverage report
-	coverage xml
-
 package.build: bump.version
 	poetry build
 
