@@ -44,7 +44,7 @@
             if ! test -f .env; then
               make config.env
             fi
-            echo "Entering the nix devShell no income back"
+            echo "Entering the nix devShell no py-bdd-context"
           '';
         };
       }

@@ -18,7 +18,6 @@ bump.version:
 	poetry version $(V)
 	sed 's/=.*/= "$(V)"/' -i py_bdd_context/__init__.py
 
-
 test:
 	python -m unittest $(args)
 
@@ -29,11 +28,6 @@ fmt:
 fmt.check:
 	black --check .
 	flake8
-
-coverage:
-	coverage run -m unittest
-	coverage report
-	coverage xml
 
 package.build: bump.version
 	poetry build

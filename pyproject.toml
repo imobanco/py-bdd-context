@@ -29,22 +29,12 @@ exclude = '''
 profile = "black"
 multi_line_output = 3
 
-[tool.coverage.report]
-omit = [
-	"*/env/*",
-	"*/venv/*",
-	"*/.venv/*",
-	"*/tests/*",
-	"*/examples/*",
-	"*/__init__.py"
-]
-
 [tool.poetry]
 name = "py-bdd-context"
 version = "0.0.0"
 description = "Biblioteca com Context Manager para facilitar os testes de Behavior Driven Development (BDD)"
 authors = ["Imobanco"]
-readme = "README.rst"
+readme = "README.md"
 packages = [{include = "py_bdd_context/**/*.py"}]
 homepage = "https://github.com/imobanco/py-bdd-context"
 repository = "https://github.com/imobanco/py-bdd-context"
@@ -69,7 +59,6 @@ python = "^3.8"
 [tool.poetry.dev-dependencies]
 flake8 = "^3.9.2"
 black = "^22.3.0"
-coverage = {extras = ["toml"], version = "^5.5"}
 isort = "^5.9.2"
 
 [tool.poetry.scripts]
