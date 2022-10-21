@@ -44,7 +44,7 @@ name = "py-bdd-context"
 version = "0.0.0"
 description = "Biblioteca com Context Manager para facilitar os testes de Behavior Driven Development (BDD)"
 authors = ["Imobanco"]
-readme = "README.rst"
+readme = "README.md"
 packages = [{include = "py_bdd_context/**/*.py"}]
 homepage = "https://github.com/imobanco/py-bdd-context"
 repository = "https://github.com/imobanco/py-bdd-context"
