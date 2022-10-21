@@ -29,10 +29,6 @@
           ];
 
           shellHook = ''
-            # TODO: documentar esse comportamento,
-            # devo abrir issue no github do nixpkgs
-            export TMPDIR=/tmp
-
             # O PyCharm ativa por padrão o ambiente virtual.
             # Esse comando cria o .venv caso não exista e
             # ativa o .venv.
