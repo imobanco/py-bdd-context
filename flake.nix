@@ -14,10 +14,6 @@
           config = { allowUnfree = true; };
         };
 
-        config = {
-          projectDir = ./.;
-        };
-
       in
       {
 
