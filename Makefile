@@ -1,10 +1,16 @@
 V=$(shell git describe --tags --abbrev=0 | sed "s/v//")
-PYPI_TEST_REPO=https://test.pypi.org/simple/
+PYPI_TEST_REPO=https://test.pypi.org/legacy/
 USERNAME='__token__'
 PASSWORD='foo'
 
 poetry.install:
 	poetry install
+
+poetry.config.test_pypi_repo:
+	poetry config repositories.testpypi https://test.pypi.org/legacy/
+
+poetry.config.test_pypi_token:
+	poetry config pypi-token.testpypi $(TOKEN)
 
 poetry.config.native:
 	poetry config virtualenvs.create false
@@ -35,11 +41,8 @@ fmt.check:
 package.build: bump.version
 	poetry build
 
-pypi.repo.test:
-	poetry config repositories.testpypi $(PYPI_TEST_REPO)
-
 package.publish.test:
-	poetry publish -r testpypi -u $(USERNAME) -p $(PASSWORD)
+	poetry publish -r testpypi
 
 package.publish:
 	poetry publish -u $(USERNAME) -p $(PASSWORD)
