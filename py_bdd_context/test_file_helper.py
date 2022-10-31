@@ -5,8 +5,11 @@ import os
 class TestFileHelper:
     def get_file_path_for_test(self, test):
         """
-        :param test:
-        :return:file path for test
+        Args:
+            test:
+
+        Returns:
+            file path for test
         """
         test_class = test.__class__
         path = os.path.relpath(inspect.getfile(test_class))
@@ -15,9 +18,12 @@ class TestFileHelper:
 
     def get_test_method_line_number_for_test(self, test, test_method_name):
         """
-        :param test:
-        :param test_method_name:
-        :return: test path and line
+        Args:
+            test:
+            test_method_name:
+
+        Returns:
+            test path and line
         """
         test_path = self.get_file_path_for_test(test)
 
@@ -34,9 +40,12 @@ class TestFileHelper:
 
     def get_exception_line_number_for_test(self, test, exc_tb):
         """
-        :param test:
-        :param exc_tb:
-        :return: exception path and line
+        Args:
+            test:
+            exc_tb:
+
+        Returns:
+            exception path and line
         """
         test_path = self.get_file_path_for_test(test)
         lineno = exc_tb.tb_lineno

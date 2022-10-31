@@ -11,7 +11,8 @@ class BDDContextTestCase(TestCase):
 
     def testDescriptionInfo(self):
         """
-        :return: test path and line
+        Returns:
+            test path and line
         """
         test_lineno = TestFileHelper().get_test_method_line_number_for_test(
             self, self._testMethodName
@@ -20,13 +21,15 @@ class BDDContextTestCase(TestCase):
 
     def bddDescriptionInfo(self):
         """
-        :return: test description
+        Returns:
+            test description
         """
         return getattr(self, "_aditional_bdd_description_infos", [])
 
     def shortDescription(self):
         """
-        :return: test description, path and line
+        Returns:
+            test description, path and line
         """
         original_description = super().shortDescription()
 
