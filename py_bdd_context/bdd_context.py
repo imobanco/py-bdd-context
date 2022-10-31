@@ -25,11 +25,22 @@ class BDDContextManager:
 
     def __exit__(self, exc_type, exc_val, exc_tb):
         """
-        Ends the method and displays the additional messages
+        When exiting the BDD Context, if some exception was raised we need to save info
+        abount the execution.
+        
+        Those infos are:
+            - exception raise file location and number
+            - BDD step type
+            - BDD step description
+        
+        Note:
+            these informations are injected on the test instance using the attribute 
+            _aditional_bdd_description_infos.
+        
         Args:
-            exc_type:
-            exc_val:
-            exc_tb:
+            exc_type: exception type
+            exc_val: exception raised
+            exc_tb: exception traceback
         """
         if exc_type is not None:
             test = exc_tb.tb_frame.f_locals["self"]
