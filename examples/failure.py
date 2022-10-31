@@ -35,7 +35,7 @@ class BDDContext(BDDContextTestCase):
 
         com várias linhas
         """
-        with self.quando(
+        with self.entao(
             """
             - Alguma cláusula BDD
             - uma outra cláusula BDD
