@@ -36,7 +36,7 @@ class TestFileHelper:
         """
         :param test:
         :param exc_tb:
-        :return: exception line
+        :return: exception path and line
         """
         test_path = self.get_file_path_for_test(test)
         lineno = exc_tb.tb_lineno
