@@ -21,8 +21,12 @@ class BDDContextTestCase(TestCase):
 
     def bddDescriptionInfo(self):
         """
+        Note:
+            this method trusts on the injection of the attribute _aditional_bdd_description_infos in
+            the test instance.
+        
         Returns:
-            test description
+            list with infos about the BDD step
         """
         return getattr(self, "_aditional_bdd_description_infos", [])
 
