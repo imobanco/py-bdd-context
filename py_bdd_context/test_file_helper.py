@@ -4,12 +4,12 @@ import os
 
 class TestFileHelper:
     def get_file_path_for_test(self, test):
-        """
+        """        
         Args:
-            test:
+            test: test method instance
 
         Returns:
-            file path for test
+            file path where the test method was declared
         """
         test_class = test.__class__
         path = os.path.relpath(inspect.getfile(test_class))
