@@ -12,21 +12,21 @@ class RiseSunTestCase(BDDContextTestCase, TestCase):
     def test_rise_sun_before_6(self):
         with self.dado(
             """
-            - são 5h da manhã
+            - it's 5 am
             """
         ):
             current_hour = 5
 
         with self.quando(
             """
-            - o sol nascer
+            - the sun rise
             """
         ):
             result = rise_sun(current_hour)
 
         with self.entao(
             """
-            - o sol deve ter nascido corretamente
+            - the sun must have risen correctly
             """
         ):
             self.assertEqual(result, True)
@@ -34,21 +34,21 @@ class RiseSunTestCase(BDDContextTestCase, TestCase):
     def test_rise_sun_after_6(self):
         with self.dado(
             """
-            - são 6h da manhã
+            - it's 6 am
             """
         ):
             current_hour = 6
 
         with self.quando(
             """
-            - o sol nascer
+            - the sun rise
             """
         ):
             result = rise_sun(current_hour)
 
         with self.entao(
             """
-            - o sol não deve ter nascido
+            - the sun must not have risen
             """
         ):
             self.assertEqual(result, False)

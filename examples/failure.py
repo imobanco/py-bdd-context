@@ -4,44 +4,44 @@ from py_bdd_context import BDDContextTestCase
 class BDDContext(BDDContextTestCase):
     def test_failure_on_dado(self):
         """
-        descrição do teste
+        test description
 
-        com várias linhas
+         with multiple lines
         """
         with self.dado(
             """
-            - Alguma cláusula BDD
+            - Any BDD clause
             """
         ):
-            raise ValueError("Algum erro qualquer")
+            raise ValueError("Any Error")
 
     def test_failure_on_quando(self):
         """
-        descrição do teste
+        test description
 
-        com várias linhas
+         with multiple lines
         """
         with self.quando(
             """
-            - Alguma cláusula BDD
-            - uma outra cláusula BDD
+            - Any BDD clause
+            - Another BDD clause
             """
         ):
-            raise ValueError("Algum erro qualquer")
+            raise ValueError("Any Error")
 
     def test_failure_on_entao(self):
         """
-        descrição do teste
+        test description
 
-        com várias linhas
+         with multiple lines
         """
         with self.entao(
             """
-            - Alguma cláusula BDD
-            - uma outra cláusula BDD
-            - uma outra cláusula BDD 2
-            - uma outra cláusula BDD 3
-            - uma outra cláusula BDD 4
+            - Any BDD clause
+            - Another BDD clause
+            - Another BDD clause 2
+            - Another BDD clause 3
+            - Another BDD clause 4
             """
         ):
-            raise ValueError("Algum erro qualquer")
+            raise ValueError("Any Error")
