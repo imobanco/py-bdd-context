@@ -23,6 +23,11 @@ bump.version:
 	poetry version $(V)
 	sed 's/=.*/= "$(V)"/' -i py_bdd_context/__init__.py
 
+coverage:
+	coverage run -m unittest
+	coverage report
+	coverage xml
+
 test:
 	python -m unittest $(args)
 

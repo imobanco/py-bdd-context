@@ -61,3 +61,31 @@ jobs:
 
       - name: Test with pytest
         run: make test
+
+  coverage:
+    runs-on: ubuntu-22.04
+    needs: test
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.8
+
+      - name: Set up Poetry
+        uses: Gr1N/setup-poetry@v7
+        with:
+          poetry-version: 1.1.8
+
+      - name: Install dependencies
+        run: |
+          make poetry.config.native
+          make poetry.install
+
+      - name: make coverage
+        run: make coverage
+
+      - uses: codecov/codecov-action@v1
+        with:
+          file: ./coverage.xml # optional
