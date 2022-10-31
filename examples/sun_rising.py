@@ -3,12 +3,12 @@ from py_bdd_context import BDDContextTestCase
 
 
 def rise_sun(hour: int):
-    if hour > 6:
+    if hour >= 6:
         return False
     return True
 
 
-class MyTestCase(BDDContextTestCase, TestCase):
+class RiseSunTestCase(BDDContextTestCase, TestCase):
     def test_rise_sun_before_6(self):
         with self.dado(
             """
