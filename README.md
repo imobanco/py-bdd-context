@@ -1,9 +1,8 @@
 # py-bdd-context
 
-Biblioteca com Context Manager para facilitar os testes de Behavior Driven Development (BDD).
+Library with Context Manager to facilitate Behavior Driven Development (BDD) tests.
 
-Essa biblioteca irá te ajudar a organizar os seus testes!
+This library will help you organize your tests!
 
-## Utilizando
-Existem exemplos de como utilizar a lib na pasta `examples`.
-
+## Using
+There are examples of how to use the lib in the `examples` folder.
