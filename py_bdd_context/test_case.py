@@ -9,7 +9,7 @@ class BDDContextTestCase(TestCase):
     entao = entao
 
     def bddDescriptionInfo(self):
-        return getattr(self, '_aditional_bdd_description_infos', [])
+        return getattr(self, "_aditional_bdd_description_infos", [])
 
     def shortDescription(self):
         original_description = super().shortDescription()
@@ -19,4 +19,4 @@ class BDDContextTestCase(TestCase):
 
         infos = [*self.bddDescriptionInfo()]
 
-        return original_description + '\n'.join(infos)
+        return original_description + "\n".join(infos)

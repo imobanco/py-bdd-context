@@ -4,7 +4,6 @@ from py_bdd_context import BDDContextTestCase
 
 
 class TestBDDContext(BDDContextTestCase):
-
     @skip("esse teste serve apenas para visualizar a descrição da falha do teste")
     def test_print_info(self):
         """
