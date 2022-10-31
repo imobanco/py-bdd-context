@@ -12,7 +12,7 @@ class BDDContextTestCase(TestCase):
     def testDescriptionInfo(self):
         """
         Returns:
-            test path and line
+            list with infos about the test path and line number
         """
         test_lineno = TestFileHelper().get_test_method_line_number_for_test(
             self, self._testMethodName
