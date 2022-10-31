@@ -1,5 +1,4 @@
 V=$(shell git describe --tags --abbrev=0 | sed "s/v//")
-PYPI_TEST_REPO=https://test.pypi.org/legacy/
 USERNAME='__token__'
 PASSWORD='foo'
 
