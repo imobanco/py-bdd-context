@@ -1,11 +1,11 @@
-Nessa pasta existem diversos exemplos de utilização da biblioteca.
+In this folder there are several examples of using the library.
 
-Todos os exemplos rodam como testes para garantir a consistência da implementação.
+All examples are run as tests to ensure implementation consistency.
 
-> exceto os exemplos de falha
+> except the failure examples
 
-# Exemplos de falha
-Para rodar os exemplos de falha, basta rodar
+# Failure examples
+To run the failure examples, just run
 
 ```shell
 make test.failure

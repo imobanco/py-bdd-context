@@ -32,6 +32,6 @@ class BDDContextManager:
             ]
 
 
-dado = functools.partial(BDDContextManager, "dado")
-quando = functools.partial(BDDContextManager, "quando")
-entao = functools.partial(BDDContextManager, "então")
+given = functools.partial(BDDContextManager, "given")
+when = functools.partial(BDDContextManager, "when")
+then = functools.partial(BDDContextManager, "then")
