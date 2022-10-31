@@ -11,7 +11,6 @@ class BDDContextManager:
             bdd_type:
             bdd_docstring:
         """
-
         self.bdd_type = bdd_type
         self.bdd_docstring = "\n".join(
             [
@@ -32,7 +31,6 @@ class BDDContextManager:
             exc_val:
             exc_tb:
         """
-
         if exc_type is not None:
             test = exc_tb.tb_frame.f_locals["self"]
             exc_lineno = TestFileHelper().get_exception_line_number_for_test(
