@@ -24,6 +24,6 @@ class BDDContextTestCase(TestCase):
         if not isinstance(original_description, str):
             original_description = ""
 
-        infos = [*self.testDescriptionInfo(), *self.bddDescriptionInfo()]
+        infos = ["", *self.testDescriptionInfo(), *self.bddDescriptionInfo()]
 
         return original_description + "\n".join(infos)

@@ -24,7 +24,7 @@ class BDDContextManager:
                 test, exc_tb
             )
 
-            test._aditional_description_infos = [
+            test._aditional_bdd_description_infos = [
                 f"{exc_lineno} | exceção",
                 "",
                 f"{self.bdd_type}:",
