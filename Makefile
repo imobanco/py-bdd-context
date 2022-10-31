@@ -21,6 +21,9 @@ bump.version:
 test:
 	python -m unittest $(args)
 
+test.failure:
+	python -m unittest examples.failure
+
 fmt:
 	black .
 	make fmt.check
