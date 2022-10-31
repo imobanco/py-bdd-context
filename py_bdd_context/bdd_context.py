@@ -6,10 +6,10 @@ from py_bdd_context.test_file_helper import TestFileHelper
 class BDDContextManager:
     def __init__(self, bdd_type: str, bdd_docstring: str):
         """
-        Starts the method displaying the BDD description, path and test line
+        Initialize the BDD Context step
         Args:
-            bdd_type:
-            bdd_docstring:
+            bdd_type: BDD step type (given, when, then)
+            bdd_docstring: BDD step description
         """
         self.bdd_type = bdd_type
         self.bdd_docstring = "\n".join(
