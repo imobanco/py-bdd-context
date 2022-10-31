@@ -19,11 +19,11 @@ class TestFileHelper:
     def get_test_method_line_number_for_test(self, test, test_method_name):
         """
         Args:
-            test:
-            test_method_name:
+            test: test method instance
+            test_method_name: test method name
 
         Returns:
-            test path and line
+            file path and line number where the the test method was declared
         """
         test_path = self.get_file_path_for_test(test)
 
