@@ -26,7 +26,7 @@ class MyTestCase(BDDContextTestCase, TestCase):
 
         with self.entao(
             """
-            - o sol deve ter nascido corretamente 
+            - o sol deve ter nascido corretamente
             """
         ):
             self.assertEqual(result, True)
@@ -48,7 +48,7 @@ class MyTestCase(BDDContextTestCase, TestCase):
 
         with self.entao(
             """
-            - o sol não deve ter nascido 
+            - o sol não deve ter nascido
             """
         ):
             self.assertEqual(result, False)
