@@ -1,13 +1,13 @@
 from unittest import TestCase
 
-from py_bdd_context.bdd_context import dado, entao, quando
+from py_bdd_context.bdd_context import given, then, when
 from py_bdd_context.test_file_helper import TestFileHelper
 
 
 class BDDContextTestCase(TestCase):
-    dado = dado
-    quando = quando
-    entao = entao
+    given = given
+    when = when
+    then = then
 
     def testDescriptionInfo(self):
         test_lineno = TestFileHelper().get_test_method_line_number_for_test(

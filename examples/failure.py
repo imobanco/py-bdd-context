@@ -2,26 +2,26 @@ from py_bdd_context import BDDContextTestCase
 
 
 class BDDContext(BDDContextTestCase):
-    def test_failure_on_dado(self):
+    def test_failure_on_given(self):
         """
         test description
 
          with multiple lines
         """
-        with self.dado(
+        with self.given(
             """
             - Any BDD clause
             """
         ):
             raise ValueError("Any Error")
 
-    def test_failure_on_quando(self):
+    def test_failure_on_when(self):
         """
         test description
 
          with multiple lines
         """
-        with self.quando(
+        with self.when(
             """
             - Any BDD clause
             - Another BDD clause
@@ -29,13 +29,13 @@ class BDDContext(BDDContextTestCase):
         ):
             raise ValueError("Any Error")
 
-    def test_failure_on_entao(self):
+    def test_failure_on_then(self):
         """
         test description
 
          with multiple lines
         """
-        with self.entao(
+        with self.then(
             """
             - Any BDD clause
             - Another BDD clause
