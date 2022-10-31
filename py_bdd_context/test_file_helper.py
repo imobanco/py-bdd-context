@@ -4,7 +4,7 @@ import os
 
 class TestFileHelper:
     def get_file_path_for_test(self, test):
-        """        
+        """
         Args:
             test: test method instance
 

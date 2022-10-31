@@ -27,16 +27,16 @@ class BDDContextManager:
         """
         When exiting the BDD Context, if some exception was raised we need to save info
         abount the execution.
-        
+
         Those infos are:
             - exception raise file location and number
             - BDD step type
             - BDD step description
-        
+
         Note:
-            these informations are injected on the test instance using the attribute 
+            these informations are injected on the test instance using the attribute
             _aditional_bdd_description_infos.
-        
+
         Args:
             exc_type: exception type
             exc_val: exception raised
