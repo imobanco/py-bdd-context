@@ -1,9 +1,6 @@
 name: pypi deploy
 
 on:
-  push:
-    branches:
-      - "*"
   release:
     types: [created]
 
@@ -31,9 +28,7 @@ jobs:
     - name: build package
       run: make package.build
 
-# teste
-
-#    - name: deploy package
-#      env:
-#        PASSWORD: ${{ secrets.PYPI_TOKEN }}
-#      run: make package.publish PASSWORD=$PASSWORD
+    - name: deploy package
+      env:
+        PASSWORD: ${{ secrets.PYPI_TOKEN }}
+      run: make package.publish PASSWORD=$PASSWORD
