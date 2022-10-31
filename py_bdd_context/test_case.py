@@ -33,7 +33,7 @@ class BDDContextTestCase(TestCase):
     def shortDescription(self):
         """
         Returns:
-            test description, path and line
+            test description with additional infos
         """
         original_description = super().shortDescription()
 
