@@ -41,11 +41,11 @@ class TestFileHelper:
     def get_exception_line_number_for_test(self, test, exc_tb):
         """
         Args:
-            test:
-            exc_tb:
+            test: test method instance
+            exc_tb: exception traceback
 
         Returns:
-            exception path and line
+            file path and line number where the exception was raised
         """
         test_path = self.get_file_path_for_test(test)
         lineno = exc_tb.tb_lineno
