@@ -20,7 +20,7 @@ class BDDContextTestCase(TestCase):
 
     def bddDescriptionInfo(self):
         """
-        :return:  test description
+        :return: test description
         """
         return getattr(self, "_aditional_bdd_description_infos", [])
 
