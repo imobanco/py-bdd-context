@@ -44,12 +44,20 @@ class BDDContextManager:
         """
         if exc_type is not None:
             test = exc_tb.tb_frame.f_locals["self"]
+
             exc_lineno = TestFileHelper().get_exception_line_number_for_test(
                 test, exc_tb
             )
-
             test._aditional_bdd_description_infos = [
                 f"{exc_lineno} | exceção",
+                "",
+                f"{self.bdd_type}:",
+                self.bdd_docstring,
+            ]
+
+            test_path = TestFileHelper().get_test_path(test)
+            test._aditional_bdd_description_infos = [
+                f"{test_path} | caminho do teste",
                 "",
                 f"{self.bdd_type}:",
                 self.bdd_docstring,

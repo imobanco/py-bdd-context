@@ -16,6 +16,25 @@ class TestFileHelper:
 
         return f"{path}"
 
+    def get_test_path(self, test):
+        """
+        Args:
+            test: test method instance
+
+        Returns:
+            test path
+        """
+        test_class = str(test.__class__)
+        test_class = test_class[8:-2]
+
+        test_method = str(test)
+        index = test_method.find(" ")
+        test_method = test_method[:index]
+
+        path = test_class + "." + test_method
+
+        return f"{path}"
+
     def get_test_method_line_number_for_test(self, test, test_method_name):
         """
         Args:
