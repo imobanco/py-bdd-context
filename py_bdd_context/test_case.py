@@ -9,7 +9,7 @@ class BDDContextTestCase(TestCase):
     when = when
     then = then
 
-    def testDescriptionInfo(self):
+    def get_description_info(self):
         """
         Returns:
             list with infos about the test path and line number
@@ -40,6 +40,6 @@ class BDDContextTestCase(TestCase):
         if not isinstance(original_description, str):
             original_description = ""
 
-        infos = ["", *self.testDescriptionInfo(), *self.bddDescriptionInfo()]
+        infos = ["", *self.get_description_info(), *self.bddDescriptionInfo()]
 
         return original_description + "\n".join(infos)
