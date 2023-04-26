@@ -9,7 +9,7 @@ class BDDContextTestCase(TestCase):
     when = when
     then = then
 
-    def get_description_info(self):
+    def get_test_description_info(self):
         """
         Returns:
             list with infos about the test path and line number
