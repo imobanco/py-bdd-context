@@ -19,7 +19,7 @@ class BDDContextTestCase(TestCase):
         )
         return ["", f"{test_lineno} | teste"]
 
-    def bddDescriptionInfo(self):
+    def get_bdd_description_info(self):
         """
         Note:
             this method trusts on the injection of the attribute _aditional_bdd_description_infos in # noqa
@@ -30,16 +30,16 @@ class BDDContextTestCase(TestCase):
         """
         return getattr(self, "_aditional_bdd_description_infos", [])
 
-    def shortDescription(self):
+    def get_short_description(self):
         """
         Returns:
             test description with additional infos
         """
-        original_description = super().shortDescription()
+        original_description = super().get_short_description()
 
         if not isinstance(original_description, str):
             original_description = ""
 
-        infos = ["", *self.get_description_info(), *self.bddDescriptionInfo()]
+        infos = ["", *self.get_description_info(), *self.get_bdd_description_info()]
 
         return original_description + "\n".join(infos)
