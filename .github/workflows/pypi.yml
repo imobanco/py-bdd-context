@@ -20,10 +20,7 @@ jobs:
         && . ~/."$(basename $SHELL)"rc \
         && export TMPDIR=/tmp \
         && nix flake --version \
-        && nix registry pin nixpkgs github:NixOS/nixpkgs/ea4c80b39be4c09702b0cb3b42eab59e2ba4f24b \
-        && curl -fsSL https://raw.githubusercontent.com/ES-Nix/get-nix/"$SHA256"/install_direnv_and_nix_direnv.sh | sh \
-        && . ~/."$(basename $SHELL)"rc \
-        && direnv --version
+        && nix registry pin nixpkgs github:NixOS/nixpkgs/ea4c80b39be4c09702b0cb3b42eab59e2ba4f24b
         echo "$HOME"/.nix-profile/bin >> $GITHUB_PATH
 
     - name: Install dependencies
