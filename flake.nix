@@ -1,31 +1,37 @@
 {
-    description = "Flake do py-bdd-context";
+  description = "Flake do py-bdd-context";
 
-    inputs = {
-        flake-utils.url = "github:numtide/flake-utils";
-    };
+  inputs = {
+    nixpkgs.url = "github:nixos/nixpkgs";
 
-    outputs = { self, nixpkgs, flake-utils }:
+    flake-utils.url = "github:numtide/flake-utils";
+  };
+
+  outputs = allAttrs@{ self, nixpkgs, flake-utils }:
     flake-utils.lib.eachDefaultSystem (system:
       let
 
         pkgsAllowUnfree = import nixpkgs {
-          system = "x86_64-linux";
+          inherit system;
           config = { allowUnfree = true; };
         };
 
-        config = {
-          projectDir = ./.;
-        };
+        # https://gist.github.com/tpwrules/34db43e0e2e9d0b72d30534ad2cda66d#file-flake-nix-L28
+        pleaseKeepMyInputs = pkgsAllowUnfree.writeTextDir "bin/.please-keep-my-inputs"
+          (builtins.concatStringsSep " " (builtins.attrValues allAttrs));
 
       in
       {
 
-        devShell = pkgsAllowUnfree.mkShell {
+        # nix fmt
+        formatter = pkgsAllowUnfree.nixpkgs-fmt;
+
+        devShells.default = pkgsAllowUnfree.mkShell {
           buildInputs = with pkgsAllowUnfree; [
             gnumake
             poetry
-            python3
+            python38
+            pleaseKeepMyInputs
           ];
 
           shellHook = ''
@@ -40,10 +46,15 @@
             # um .venv desatualizado.
             test -f .venv/bin/activate || make poetry.install
             source .venv/bin/activate
-            # Se não existir cria o .env com valores padrão
-            if ! test -f .env; then
-              make config.env
-            fi
+
+            test -d .profiles || mkdir -v .profiles
+
+            test -L .profiles/dev \
+            || nix develop .# --profile .profiles/dev --command true
+
+            test -L .profiles/dev-shell-default \
+            || nix build $(nix eval --impure --raw .#devShells."$system".default.drvPath) --out-link .profiles/dev-shell-"$system"-default
+
             echo "Entering the nix devShell no py-bdd-context"
           '';
         };
