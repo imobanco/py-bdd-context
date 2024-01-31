@@ -40,7 +40,6 @@
             # um .venv desatualizado.
             test -f .venv/bin/activate || make poetry.install
             source .venv/bin/activate
-            # Se não existir cria o .env com valores padrão
 
             echo "Entering the nix devShell no py-bdd-context"
           '';
