@@ -134,3 +134,4 @@ certs/
 .direnv/
 .venv*
 .profiles/
+result
