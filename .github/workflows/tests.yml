@@ -14,7 +14,7 @@ jobs:
   lint:
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
       - name: Instala nix single user
         run: |
@@ -45,10 +45,10 @@ jobs:
         os: [ubuntu-22.04]
         python: [3.8, 3.9]
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
       - name: Set up Python
-        uses: actions/setup-python@v1
+        uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python }}
 
@@ -76,7 +76,7 @@ jobs:
     runs-on: ubuntu-22.04
     needs: test
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
       - name: Instala nix single user
         run: |
@@ -98,6 +98,6 @@ jobs:
       - name: make coverage
         run: nix develop .# --command sh -c 'source .venv/bin/activate && make coverage'
 
-      - uses: codecov/codecov-action@v1
+      - uses: codecov/codecov-action@v4
         with:
           file: ./coverage.xml # optional
